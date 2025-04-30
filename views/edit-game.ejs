@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Rediger spel</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="form-container">
+    <h1>Rediger spel</h1>
+    <form action="/edit-game/<%= game.id %>" method="POST">
+      <label for="tittel">Tittel:</label>
+      <input type="text" id="tittel" name="tittel" value="<%= game.tittel %>" required>
+
+      <label for="årstall">Årstall:</label>
+      <input type="number" id="årstall" name="årstall" value="<%= game.årstall %>" required>
+
+      <label for="rating">Rating (0–10):</label>
+      <input type="number" id="rating" name="rating" step="0.1" min="0" max="10" value="<%= game.rating %>" required>
+
+      <label for="sjanger">Sjanger:</label>
+      <input type="text" id="sjanger" name="sjanger" value="<%= game.sjanger %>" required>
+
+      <label for="image_url">Bilde-URL:</label>
+      <input type="url" id="image_url" name="image_url" value="<%= game.image_url %>" required>
+
+      <button type="submit">Lagre endringar</button>
+    </form>
+    <a class="cancel-button" href="/home">Avbryt</a>
+  </div>
+</body>
+</html>

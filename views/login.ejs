@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,minimum-scale=1" />
+  <title>Login</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" />
+  <link href="/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+  <header>
+    <nav aria-label="Hovedmeny">
+      <ul class="navlinks">
+        <li><a href="/">Heim</a></li>
+        <li><a href="/login" class="active">Logg inn</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Bruk KUN form-wrapper for struktur og stil -->
+  <div class="form-wrapper">
+    <!-- Login form -->
+    <div id="login-form" class="form-box">
+      <h1>Logg inn</h1>
+      <form action="/auth" method="post">
+        <label for="email"><i class="fas fa-user"></i></label>
+        <input type="text" name="email" placeholder="E-post" id="email" required />
+
+        <label for="password"><i class="fas fa-lock"></i></label>
+        <input type="password" name="password" placeholder="Passord" id="password" required />
+
+        <input type="submit" value="Logg inn" />
+      </form>
+      <p>Har du ikkje ein bruker? <a href="#" onclick="toggleForm()">Registrer deg her</a></p>
+    </div>
+
+    <!-- Register form -->
+    <div id="register-form" class="form-box hidden">
+      <h1>Registrer deg</h1>
+      <form action="/register" method="post">
+        <label for="fname"><i class="fas fa-user"></i></label>
+        <input type="text" name="fname" placeholder="Fornavn" id="fname" required />
+
+        <label for="lname"><i class="fas fa-user"></i></label>
+        <input type="text" name="lname" placeholder="Etternavn" id="lname" required />
+
+        <label for="email"><i class="fas fa-envelope"></i></label>
+        <input type="text" name="email" placeholder="E-post" required />
+
+        <label for="password"><i class="fas fa-lock"></i></label>
+        <input type="password" name="password" placeholder="Passord" required />
+
+        <label for="confirmPassword"><i class="fas fa-lock"></i></label>
+        <input type="password" name="confirmPassword" placeholder="Bekreft passord" required />
+
+        <input type="submit" value="Registrer deg" />
+      </form>
+      <p>Har du allerede ein brukar? <a href="#" onclick="toggleForm()">Logg inn her</a></p>
+    </div>
+  </div>
+
+  <script src="/script.js"></script>
+</body>
+</html>

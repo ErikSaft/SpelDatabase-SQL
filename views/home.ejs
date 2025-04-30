@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://use.fontawesome.com/releases/v5.7.1/js/all.js"></script>
+
+  <title>Heim - OSS AS</title>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <ul class="navlinks">
+        <li>
+          <a href="/home" class="active">
+            <i class="fas fa-home"></i> Heim
+          </a>
+        </li>
+        <li>
+          <a href="/profile">
+            <i class="fas fa-user"></i> Min profil
+          </a>
+        </li>
+        <% if (admin) { %>
+          <li>
+            <a href="/admin"> <i class="fas fa-cogs"></i> Admin </a>
+          </li>
+          <% } %>
+            <li>
+              <a href="/logout">
+                <i class="fas fa-sign-out-alt"></i> Logg ut
+              </a>
+            </li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <div class="container">
+      <h1>Mine Spel</h1>
+      <a href="/add-game">Legg til spel</a>
+      <div class="game-list">
+        <% games.forEach(game=> { %>
+          <div class="game-card">
+            <img src="<%= game.image_url %>" alt="<%= game.tittel %> poster" class="game-poster">
+            <h2>
+              <%= game.tittel %> (<%= game.årstall %>)
+            </h2>
+            <p><strong>Vurdering:</strong>
+              <%= game.rating %> ⭐
+            </p>
+            <p><strong>Sjanger:</strong>
+              <%= game.sjanger %>
+            </p>
+            <a href="/edit-game/<%= game.id %>">Rediger</a>
+            <form action="/delete-game/<%= game.id %>" method="POST" onsubmit="return confirm('Er du sikker på at du vil slette dette spelet?');">
+              <button type="submit">Slett</button>
+            </form>
+          </div>
+          <% }) %>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

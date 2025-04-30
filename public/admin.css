@@ -1,0 +1,77 @@
+:root {
+    --primary-color: #686eb8;  /* Hovedbakgrunn (nesten svart) */
+    --secondary-color: #241e37; /* Sekundær bakgrunn */
+    --nav-bg: #0f0f0f;  /* Mørk navbar */
+    --nav-hover: #222;  /* Mørkere hover-effekt */
+    --text-color: #e0e0e0;  /* Lys grå tekst */
+    --accent-color: #00ff88; /* Neon grønn for aksenter */
+    --input-bg: rgba(255, 255, 255, 0.1);  /* Diskret input bakgrunn */
+    --input-placeholder: rgba(255, 255, 255, 0.5); /* Input placeholder */
+    --button-primary: #14714c;  /* Neon grønn primærknapp */
+    --button-primary-hover: #0d9c60; /* Mørkere grønn hover */
+    --button-cancel: #444;  /* Mørk grå avbryt-knapp */
+    --button-cancel-hover: #333; /* Enda mørkere grå hover */
+    --favorite-color: #ff0044; /* Rødt hjerte */
+}
+table {
+    width: 100%;
+    border-collapse: collapse; /* Fjerner dobbel kantlinje */
+    border-spacing: 0;
+    margin: 20px 0; /* Litt avstand fra andre elementer */
+    background: var(--secondary-color); /* Bruker en mørk bakgrunn */
+    color: var(--text-color);
+    border-radius: 8px;
+    overflow: hidden; /* Sikrer avrundede hjørner */
+}
+
+/* Styling av overskriftene (thead) */
+th {
+    background: var(--nav-bg); /* Mørkere farge på header */
+    color: white;
+    padding: 15px;
+    text-align: left;
+}
+
+/* Styling av celler */
+td {
+    padding: 12px 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Tynn linje mellom rader */
+}
+
+/* Gjør annenhver rad litt mørkere */
+tr:nth-child(even) {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* Hover-effekt når man holder musen over en rad */
+tr:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Justerer ikonene i redigerings- og slettekolonnen */
+.actions {
+    display: flex;
+    gap: 10px; /* Litt avstand mellom ikoner */
+}
+
+/* Knappene for redigering og sletting */
+.editTable-btn, .delete-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.editTable-btn {
+    color: #00c776; /* Grønn for redigering */
+}
+
+.delete-btn {
+    color: #ff4d4d; /* Rød for sletting */
+}
+
+/* Legg til en enkel hover-effekt for knappene */
+.editTable-btn:hover, .delete-btn:hover {
+    transform: scale(1.2);
+}
